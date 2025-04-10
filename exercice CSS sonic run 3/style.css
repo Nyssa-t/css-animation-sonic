@@ -1,0 +1,133 @@
+@keyframes run-x{ 
+    0% {
+        background-position: 0 0;
+    }
+
+    100% {
+        background-position: -585px 0;
+    }
+}
+
+@keyframes run-y{
+    0%{
+        background-position-y: -70px;
+    }
+    100%{
+        background-position-y: -350px;
+    }
+}
+
+@keyframes move{
+    0% {
+        background-position-x: 0;
+    }
+
+    100% {
+        background-position-x: -585px;
+    }
+}
+
+@keyframes deplacement{
+    0%{
+        transform: translate(0);
+    }
+    60%{
+        transform: translateX(30px);
+    }
+    70%{
+        transform: translateX(150%);
+    }
+    80% {
+        transform: translateX(30px);
+    }
+    90%{
+        transform: translateY(-140px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.animation_container {
+    position: relative;
+    height: 500px;
+}
+
+.sonic, .sky, .sea, .ground, .plant {
+    background-image: url(img/spriteSonicfullf.png);
+}
+
+.animation_sonic {
+    position: absolute;
+    height: 70px;
+    width: 65px;
+    left: 50%;
+    bottom: 54%;
+    z-index: 1000;
+    overflow: hidden;
+    animation: deplacement 3s linear infinite;
+}
+
+.sonic {
+    position: absolute;
+    height: 350px;
+    width: 570px;
+    z-index: 1000;
+    animation: run-x 0.75s steps(9) infinite both, run-y 3s steps(4) infinite both;
+}
+
+.animation_arriere {
+    position: absolute;
+    height: 290px;
+    width: 5000px;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.sky {
+    position: absolute;
+    height: 180px;
+    width: 100%;
+    z-index: -1;
+    background-position: 0 570px;
+    animation: move 6s linear infinite;
+}
+
+.sea {
+    position: absolute;
+    height: 110px;
+    width: 100%;
+    bottom: 16%;
+    z-index: -2;
+    background-position: 0 389px;
+    animation: move 5s linear infinite;
+}
+
+.animation_sol {
+    position: absolute;
+    height: 280px;
+    width: 5000px;
+    bottom: 31%;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.ground {
+    position: absolute;
+    height: 116px;
+    width: 100%;
+    z-index: 500;
+    bottom: 1%;
+    background-position: 0 277px;
+    animation: move 2s linear infinite;
+}
+
+.plant {
+    position: absolute;
+    height: 160px;
+    width: 100%;
+    z-index: 400;
+    bottom : 41%;
+    background-position: 0 162px;
+    animation: move 2.5s linear infinite;
+}
