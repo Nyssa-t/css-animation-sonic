@@ -1,0 +1,100 @@
+@keyframes run{
+    0% {
+        background-position: 0 -70px;
+    }
+    100% {
+        background-position: -585px -70px;
+    }
+}
+
+@keyframes move{
+    0% {
+        background-position-x: 0;
+    }
+    100% {
+        background-position-x: -585px;
+    }
+}
+
+.animation_container {
+    position: relative;
+    height: 500px;
+}
+
+.sonic, .sky, .sea, .ground, .plant {
+    background-image: url(img/spriteSonicfullf.png);
+}
+
+.animation_sonic {
+    position: absolute;
+    height: 70px;
+    width: 65px;
+    left: 50%;
+    bottom: 54%;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.sonic {
+    position: absolute;
+    height: 350px;
+    width: 570px;
+    z-index: 1000;
+    animation: 0.7s steps(9) infinite both run;
+}
+
+.animation_arriere {
+    position: absolute;
+    height: 290px;
+    width: 5000px;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.sky {
+    position: absolute;
+    height: 180px;
+    width: 100%;
+    z-index: -1;
+    background-position: 0 570px;
+    animation: 6s linear infinite move;
+}
+
+.sea {
+    position: absolute;
+    height: 110px;
+    width: 100%;
+    bottom: 16%;
+    z-index: -2;
+    background-position: 0 389px;
+    animation: 5s linear infinite move;
+}
+
+.animation_sol {
+    position: absolute;
+    height: 280px;
+    width: 5000px;
+    bottom: 31%;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.ground {
+    position: absolute;
+    height: 116px;
+    width: 100%;
+    z-index: 500;
+    bottom: 1%;
+    background-position: 0 277px;
+    animation: 2s linear infinite move;
+}
+
+.plant {
+    position: absolute;
+    height: 160px;
+    width: 100%;
+    z-index: 400;
+    bottom : 41%;
+    background-position: 0 162px;
+    animation: 2.5s linear infinite move;
+}
